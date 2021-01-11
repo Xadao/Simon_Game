@@ -23,13 +23,13 @@ function nextSequence(){
     var randColor = iDs[rnd];
     sequenceList.push(randColor);
     $("#"+randColor).fadeOut(200).fadeIn(200);
-    var audio = new Audio("sounds/"+randColor+".mp3");
+    var audio = new Audio("//sounds/"+randColor+".mp3");
     audio.play();
 }
 $(".btn").on("click", function () {
     var clickedId = $(this).attr("id");
     userSequence.push(clickedId); 
-    var audio = new Audio("sounds/"+clickedId+".mp3");
+    var audio = new Audio("//sounds/"+clickedId+".mp3");
     audio.play();
     $(this).addClass("pressed");
     setTimeout(function() {$("#"+clickedId).removeClass("pressed"); }, 200);
@@ -44,7 +44,7 @@ function checkSequence (currLevel){
         
     }else{
         $("#level-title").text("Sajnos vesztettél, az újrkezdéshez nyomj meg 1 billentyűt!");
-        var audio = new Audio("sounds/wrong.mp3");
+        var audio = new Audio("//sounds/wrong.mp3");
         audio.play();
         $("body").addClass("game-over");
         setTimeout(function() {$("body").removeClass("game-over");}, 300);
